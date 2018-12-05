@@ -1,7 +1,7 @@
 //---Bibliotecas
 #include <stdio.h>
 #include <string.h>
-
+#include <stdlib.h>
 
 //---Estructuras
 typedef struct {
@@ -22,53 +22,26 @@ typedef struct {
         unsigned int calificacion;
 }pelicula;
 
+int opcion;
 
 //---Prototipos de funciones
-int menu();
+void alta_clientes(), baja_clientes(), modif_clientes(); //Funciones de cliente
+void menu();
 
 
-//--- Función principal
+//---Función main
 int main() {
-        int opcion;
-
-        opcion = menu();
-
-        switch(opcion) {
-                case 1: intro();
-                break;
-
-                case 2: modificar();
-                break;
-
-                case 3: guardar();
-                break;
-
-                case 4: cargar();
-                break;
-
-                default: printf("Opción no válida");
-                return 0;
-        }
-
+        menu();
+        return 0;
 }
 
-//---Funciones
-int menu() {
-        char s[50];
-        int c;
 
-        printf("------ Menú principal ------");
-        printf("*** Clientes ***");
-        printf("1- Registrar un usuario");
-        printf("2- Modificar todos los usuarios"); //Dentro hay mas menús para 
-        printf("3- Guardar archivo de usuarios");
-        printf("4- Cargar archivo de usuarios");
+//---Funciones externas
+void menu() {
+        int op;
 
         do {
-                printf("Ingrese la opción deseada: ");
-                fgets(s, sizeof(s), stdin);
-                c = atoi(s);
-        } while (c < 0 || c > 9);
-
-        return c;
+                printf("---------- FLIXNET ----------");
+                printf("1- Dar de alta un cliente")
+        }
 }
