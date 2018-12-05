@@ -33,7 +33,22 @@ int main() {
 
         opcion = menu();
 
+        switch(opcion) {
+                case 1: intro();
+                break;
 
+                case 2: modificar();
+                break;
+
+                case 3: guardar();
+                break;
+
+                case 4: cargar();
+                break;
+
+                default: printf("Opción no válida");
+                return 0;
+        }
 
 }
 
@@ -46,8 +61,8 @@ int menu() {
         printf("*** Clientes ***");
         printf("1- Registrar un usuario");
         printf("2- Modificar todos los usuarios"); //Dentro hay mas menús para 
-        printf("4- Guardar archivo de usuarios");
-        printf("5- Cargar archivo de usuarios");
+        printf("3- Guardar archivo de usuarios");
+        printf("4- Cargar archivo de usuarios");
 
         do {
                 printf("Ingrese la opción deseada: ");
