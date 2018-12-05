@@ -31,6 +31,9 @@ int menu();
 int main() {
         int opcion;
 
+        opcion = menu();
+
+
 
 }
 
