@@ -42,6 +42,24 @@ void menu() {
 
         do {
                 printf("---------- FLIXNET ----------");
-                printf("1- Dar de alta un cliente")
-        }
+                printf("1- Dar de alta un cliente");
+                printf("2- Dar de baja un cliente");
+                printf("3- Modificar un cliente");
+                printf("4- Salir")
+                scanf("%d",&op);
+
+                switch(opcion) {
+                        case 1: alta_clientes();
+                        break;
+
+                        case 2: baja_clientes();
+                        break;
+
+                        case 3: modif_clientes();
+                        break;
+
+                        case 4: break;
+                }
+        } while (opcion != 5);
+
 }
