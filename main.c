@@ -132,13 +132,6 @@ void alta_clientes() {
                 return 0;
         }
 
-
-        //Datos de las películas
-        
-        /*
-        unsigned int calif;
-        */
-
        // Ingreso de nombre de la película
        printf("\nIngrese el nombre de la película: ");
        scanf("%s", &peli.nombre);
@@ -190,4 +183,11 @@ void alta_clientes() {
                 printf("Entrada errónea");
                 return 0;
         }
+        fseek(fp, 0L, SEEK_END);
+        fwrite(&client,sizeof(Cliente),1,fp);
+        fwrite(&peli,sizeof(Pelicula),1,fp);
+        fclose(fp);
+        printf("\n\n\n\n\n\n\n\n\n");
+        menu();
 }
+
