@@ -76,70 +76,60 @@ void alta_clientes() {
         scanf("%i",&client.ID);
 
         if(client.ID == NULL) {
-                client.ID = NULL;
                 printf("No se permiten campos nulos");
-                alta_clientes();
+                return 0;
         }
 
         // Ingreso de correo
         printf("\nIngrese el correo del cliente: ");
         scanf("%s",&client.correo);
         if(strlen(client.correo) == 0) {
-                client.correo = NULL;
                 printf("No se permiten campos nulos");
-                alta_clientes();
+                return 0;
         } else if(strlen(client.correo) > 50) {
                 printf("Se excedió el número de caracteres aceptados");
-                client.correo = NULL;
-                alta_clientes();
+                return 0;
         }
 
         // Ingreso de Username
         printf("\nIngrese el nombre de usuario: ");
         scanf("%s",&client.nombre);
         if(strlen(client.nombre) == 0) {
-                client.nombre = NULL;
                 printf("No se permiten campos nulos");
-                alta_clientes();
+                return 0;
         } else if(strlen(client.nombre) > 15) {
                 printf("Se excedió el número de caracteres aceptados");
-                client.nombre = NULL;
-                alta_clientes();
+                return 0;
         }
 
         // Ingreso de Apellido Paterno
         printf("\nIngrese el apellido paterno del usuario: ");
         scanf("%s",&client.apaterno);
         if(strlen(client.apaterno) == 0) {
-                client.apaterno = NULL;
                 printf("No se permiten campos nulos");
-                alta_clientes();
+                return 0;
         }else if(strlen(client.apaterno) > 15) {
                 printf("Se excedió el número de caracteres aceptados");
-                client.apaterno = NULL;
-                alta_clientes();
+                return 0;
         }
 
         // Ingreso de apellido materno
         printf("\nIngrese el apellido materno del usuario");
         scanf("%s",&client.amaterno);
         if(strlen(client.amaterno) == 0) {
-                client.amaterno = NULL;
                 printf("No se permiten campos nulos");
-                alta_clientes();
+                return 0;
         }else if(strlen(client.amaterno) > 15) {
                 printf("Se excedió el número de caracteres aceptados");
-                client.amaterno = NULL;
-                alta_clientes();
+                return 0;
         }
 
         // Ingreso de la edad del usuario
         printf("\nIngrese la edad del usuario: ");
         scanf("%s",&client.edad);
         if(client.edad== 0) {
-                client.edad = NULL;
                 printf("No se permiten campos nulos");
-                alta_clientes();
+                return 0;
         }
 
 
