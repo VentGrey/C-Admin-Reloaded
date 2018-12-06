@@ -154,20 +154,18 @@ void alta_clientes() {
        scanf("%s", &peli.nombre);
        if(strlen(peli.nombre) == 0) {
                printf("\nNo se permiten campos nulos");
-               peli.nombre = NULL;
-               alta_clientes();
+                return 0;
        } else if(strlen(peli.nombre) > 20) {
                printf("\nSe excedieron los carácteres aceptados");
-               peli.nombre = NULL;
-               alta_clientes();
+               return 0;
        }
 
         // Ingreso del día de la película
         printf("\nIngrese el día de renta: ");
         scanf("%u", &peli.dia);
         if(peli.dia == NULL || peli.dia == 0) {
-                printf("\nNo se permiten campos nulos");
-                alta_clientes();
+                printf("\nEntrada errónea")
+               return 0; 
         }
 
         // Ingreso del mes
@@ -176,7 +174,7 @@ void alta_clientes() {
         scanf("%u", &peli.mes);
         if(peli.dia == NULL || peli.mes <= 0 || peli.mes > 12) {
                 printf("\nEntrada Errónea");
-                alta_clientes();
+                return 0;
         }
 
         // Ingreso del año
@@ -184,6 +182,7 @@ void alta_clientes() {
         scanf("%u", &peli.anio);
         if(peli.anio == 0 || peli.anio <= 0) {
                 printf("\nEntrada Errónea")
+                return 0;
         }
 
         // Ingreso de clasificación
@@ -191,8 +190,7 @@ void alta_clientes() {
         scanf("%u", &peli.clasificacion);
         if(strlen(peli.clasificacion) <= 0 || strlen(peli.clasificacion) > 2) {
                 printf("\nEntrada errónea");
-                peli.clasificacion == NULL;
-                alta_clientes();
+                return 0;
         }
 
         // Ingreso de calificacion
@@ -200,7 +198,6 @@ void alta_clientes() {
         scanf("%u", &peli.calif);
         if(peli.calif < 1 || peli.calif > 5 || peli.calif == NULL) {
                 printf("Entrada errónea");
-                peli.calif == NULL;
-                alta_clientes();
+                return 0;
         }
 }
