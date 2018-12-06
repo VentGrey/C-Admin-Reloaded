@@ -19,8 +19,8 @@ typedef struct {
         unsigned int mes;
         unsigned int anio;
         char clasificacion[2];
-        unsigned int calificacion;
-}pelicula;
+        unsigned int calif;
+}Pelicula;
 
 int opcion;
 
@@ -68,13 +68,14 @@ void alta_clientes() {
         FILE *fp;
 
         Cliente client;
+        Pelicula peli;
         fp = fp("Clientes.res");
 
         // Datos del cliente
         printf("Ingrese el ID del cliente: ");
         scanf("%i",&client.ID);
 
-        if(client.ID == 0) {
+        if(client.ID == NULL) {
                 client.ID = NULL;
                 printf("No se permiten campos nulos");
                 alta_clientes();
@@ -143,4 +144,56 @@ void alta_clientes() {
 
 
         //Datos de las películas
+        
+        /*
+        unsigned int calif;
+        */
+
+       // Ingreso de nombre de la película
+       printf("\nIngrese el nombre de la película: ");
+       scanf("%s", &peli.nombre);
+       if(strlen(peli.nombre) == 0) {
+               printf("\nNo se permiten campos nulos");
+               peli.nombre = NULL;
+               alta_clientes();
+       } else if(strlen(peli.nombre) > 20) {
+               printf("\nSe excedieron los carácteres aceptados");
+               peli.nombre = NULL;
+               alta_clientes();
+       }
+
+        // Ingreso del día de la película
+        printf("\nIngrese el día de renta: ");
+        scanf("%u", &peli.dia);
+        if(peli.dia == NULL || peli.dia == 0) {
+                printf("\nNo se permiten campos nulos");
+                alta_clientes();
+        }
+
+        // Ingreso del mes
+
+        printf("\nIngrese el mes de renta: ");
+        scanf("%u", &peli.mes);
+        if(peli.dia == NULL || peli.mes <= 0 || peli.mes > 12) {
+                printf("\nEntrada Errónea");
+                alta_clientes();
+        }
+
+        printf("\nIngrese el año de renta: ");
+        scanf("%u", &peli.anio);
+        if(peli.anio == 0 || peli.anio <= 0) {
+                printf("\nEntrada Errónea")
+        }
+
+        printf("\nIngrese la clasificación de la película (A, AA, AB, etc");
+        scanf("%u", &peli.clasificacion);
+        if(strlen(peli.clasificacion) <= 0 || strlen(peli.clasificacion) > 2) {
+                printf("\nEntrada errónea");
+                peli.clasificacion == NULL;
+                alta_clientes();
+        }
+
+        printf("\nIngrese la calificación de la película <1-5>");
+        scanf("%u", &peli.calif);
+        if(peli.calif < 1 || peli.calif > 5 || peli.calif == NULL)
 }
