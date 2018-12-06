@@ -179,12 +179,14 @@ void alta_clientes() {
                 alta_clientes();
         }
 
+        // Ingreso del año
         printf("\nIngrese el año de renta: ");
         scanf("%u", &peli.anio);
         if(peli.anio == 0 || peli.anio <= 0) {
                 printf("\nEntrada Errónea")
         }
 
+        // Ingreso de clasificación
         printf("\nIngrese la clasificación de la película (A, AA, AB, etc");
         scanf("%u", &peli.clasificacion);
         if(strlen(peli.clasificacion) <= 0 || strlen(peli.clasificacion) > 2) {
@@ -193,7 +195,12 @@ void alta_clientes() {
                 alta_clientes();
         }
 
+        // Ingreso de calificacion
         printf("\nIngrese la calificación de la película <1-5>");
         scanf("%u", &peli.calif);
-        if(peli.calif < 1 || peli.calif > 5 || peli.calif == NULL)
+        if(peli.calif < 1 || peli.calif > 5 || peli.calif == NULL) {
+                printf("Entrada errónea");
+                peli.calif == NULL;
+                alta_clientes();
+        }
 }
