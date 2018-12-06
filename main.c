@@ -89,6 +89,8 @@ void alta_clientes() {
                 alta_clientes();
         } else if(strlen(client.correo) > 50) {
                 printf("Se excedió el número de caracteres aceptados");
+                client.correo = NULL;
+                alta_clientes();
         }
 
         // Ingreso de Username
@@ -98,8 +100,10 @@ void alta_clientes() {
                 client.nombre = NULL;
                 printf("No se permiten campos nulos");
                 alta_clientes();
-        } else if(strlen(client.correo) > 15) {
+        } else if(strlen(client.nombre) > 15) {
                 printf("Se excedió el número de caracteres aceptados");
+                client.nombre = NULL;
+                alta_clientes();
         }
 
         // Ingreso de Apellido Paterno
@@ -109,8 +113,10 @@ void alta_clientes() {
                 client.apaterno = NULL;
                 printf("No se permiten campos nulos");
                 alta_clientes();
-        }else if(strlen(client.correo) > 15) {
+        }else if(strlen(client.apaterno) > 15) {
                 printf("Se excedió el número de caracteres aceptados");
+                client.apaterno = NULL;
+                alta_clientes();
         }
 
         // Ingreso de apellido materno
@@ -120,8 +126,10 @@ void alta_clientes() {
                 client.amaterno = NULL;
                 printf("No se permiten campos nulos");
                 alta_clientes();
-        }else if(strlen(client.correo) > 15) {
+        }else if(strlen(client.amaterno) > 15) {
                 printf("Se excedió el número de caracteres aceptados");
+                client.amaterno = NULL;
+                alta_clientes();
         }
 
         // Ingreso de la edad del usuario
