@@ -25,7 +25,11 @@ typedef struct {
 int opcion;
 
 //---Prototipos de funciones
-void alta_clientes(), baja_clientes(), modif_clientes(); //Funciones de cliente
+//--Clientes
+void alta_clientes(), baja_clientes(), modif_clientes(), list_clientes();
+//--Películas
+void alta_pelis(), baja_pelis(), modificar_pelis(), list_pelis();
+//--Core Functions
 void menu();
 
 //---Función main
@@ -40,11 +44,18 @@ void menu() {
         int op;
 
         do {
-                printf("---------- FLIXNET ----------");
-                printf("1- Dar de alta un cliente");
-                printf("2- Dar de baja un cliente");
-                printf("3- Modificar un cliente");
-                printf("4- Salir");
+                printf("---------- FLIXNET ----------\n");
+                printf("-----Clientes------------------\n")
+                printf("1- Dar de alta un cliente\n");
+                printf("2- Dar de baja un cliente\n");
+                printf("3- Modificar un cliente\n");
+                printf("4- Listar los clientes\n");
+                printf("-----Películas-------------------");
+                printf("5- Dar de alta una película\n");
+                printf("6- Dar de baja una película\n");
+                printf("7- Modificar una película\n");
+                printf("8- Listar las películas\n");
+                printf("9- Salir\n");
                 scanf("%d",&op);
 
                 switch(opcion) {
@@ -59,7 +70,7 @@ void menu() {
 
                         case 4: break;
                 }
-        } while (opcion != 4);
+        } while (opcion != 9);
 
 }
 
