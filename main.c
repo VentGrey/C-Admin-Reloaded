@@ -28,8 +28,8 @@ typedef struct {
         unsigned int dia;
         unsigned int mes;
         unsigned int anio;
-        char clasificacion[2];
-        unsigned int calif;
+        char clas[2];
+        unsigned int cal;
 }Pelicula;
 
 int opcion;
@@ -92,6 +92,8 @@ void menu() {
 
                         case 8: list_pelis();
                         break;
+
+                        case 9: break;
                 }
         } while (opcion != 9);
 
@@ -231,16 +233,16 @@ void alta_pelis() {
 
         // Ingreso de clasificación
         printf("\nIngrese la clasificación de la película (A, AA, AB, etc");
-        scanf("%u", &peli.clasificacion);
-        if(strlen(peli.clasificacion) <= 0 || strlen(peli.clasificacion) > 2) {
+        scanf("%u", &peli.clas);
+        if(strlen(peli.clas) <= 0 || strlen(peli.clas) > 2) {
                 printf("\nEntrada errónea");
                 return 0;
         }
 
         // Ingreso de calificacion
         printf("\nIngrese la calificación de la película <1-5>");
-        scanf("%u", &peli.calif);
-        if(peli.calif < 1 || peli.calif > 5 || peli.calif == NULL) {
+        scanf("%u", &peli.cal);
+        if(peli.cal < 1 || peli.cal > 5 || peli.cal == NULL) {
                 printf("Entrada errónea");
                 return 0;
         }
@@ -252,3 +254,24 @@ void alta_pelis() {
         menu();
 }
 
+/*
+        char nom[20];
+        unsigned int dia;
+        unsigned int mes;
+        unsigned int anio;
+        char clas[2];
+        unsigned int cal;
+*/
+
+void list_pelis() {
+        FILE *fp;
+
+        Pelicula peli;
+
+        fp = fopen("Pelis.ntlx", "rb");
+        fread(&peli,sizeof(Pelicula),1,fp);
+        while(!feof(fp)) {
+                printf("| %s | %u | %u | %u | %s | %u |"
+                , peli.nom, peli.dia, peli.mes, peli.anio, peli.clas, peli.cal);
+        }
+}
