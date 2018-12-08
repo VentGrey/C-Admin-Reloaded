@@ -254,15 +254,6 @@ void alta_pelis() {
         menu();
 }
 
-/*
-        char nom[20];
-        unsigned int dia;
-        unsigned int mes;
-        unsigned int anio;
-        char clas[2];
-        unsigned int cal;
-*/
-
 void list_pelis() {
         FILE *fp;
 
