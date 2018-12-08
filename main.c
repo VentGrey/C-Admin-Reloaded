@@ -184,7 +184,6 @@ void list_clientes() {
                 fread(&client,sizeof(Cliente),1,fp);
         }
         fclose(fp);
-        
 }
 
 void alta_pelis() {
