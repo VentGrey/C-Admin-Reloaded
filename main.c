@@ -1,3 +1,18 @@
+//---Macros
+//--Colores
+#define RED(string)
+#define BOLD_RED(string)
+#define GREEN(string)
+#define YELLOW(string)
+#define BOLD_YELLOW(string)
+#define BLUE(string)
+#define BOLD_BLUE(string)
+#define MAGENTA(string)
+#define BOLD_MAGENTA(string)
+#define CYAN(string)
+#define BOLD_CYAN(string)
+#define RESET(string)
+
 //---Bibliotecas
 #include <stdio.h>
 #include <string.h>
