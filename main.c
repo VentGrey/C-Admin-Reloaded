@@ -1,17 +1,12 @@
 //---Macros
 //--Colores
-#define RED(string)
-#define BOLD_RED(string)
-#define GREEN(string)
-#define YELLOW(string)
-#define BOLD_YELLOW(string)
-#define BLUE(string)
-#define BOLD_BLUE(string)
-#define MAGENTA(string)
-#define BOLD_MAGENTA(string)
-#define CYAN(string)
-#define BOLD_CYAN(string)
-#define RESET(string)
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN "\x1b[32m"
+#define ANSI_COLOR_YELLOW "\x1b[33m"
+#define ANSI_COLOR_BLUE "\x1b[34m"
+#define ANSI_COLOR_MAGENTA "\x1b[35m"
+#define ANSI_COLOR_CYAN "\x1b[36m"
+#define ANSI_COLOR_RESET "\x1b[0m"
 
 //---Bibliotecas
 #include <stdio.h>
