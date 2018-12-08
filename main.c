@@ -273,5 +273,7 @@ void list_pelis() {
         while(!feof(fp)) {
                 printf("| %s | %u | %u | %u | %s | %u |"
                 , peli.nom, peli.dia, peli.mes, peli.anio, peli.clas, peli.cal);
+                fread(&peli,sizeof(Pelicula),1,fp);
         }
+        fclose(fp);
 }
