@@ -68,7 +68,20 @@ void menu() {
                         case 3: modif_clientes();
                         break;
 
-                        case 4: break;
+                        case 4: list_clientes();
+                        break;
+
+                        case 5: alta_pelis();
+                        break;
+
+                        case 6: baja_pelis();
+                        break;
+
+                        case 7: modificar_pelis();
+                        break;
+
+                        case 8: list_pelis();
+                        break;
                 }
         } while (opcion != 9);
 
@@ -201,12 +214,3 @@ void alta_clientes() {
         menu();
 }
 
-
-/*
-        int ID;
-        char correo[50];
-        char nombre[15];
-        char apaterno[15];
-        char amaterno[15];
-        unsigned int edad;
-*/
