@@ -60,7 +60,7 @@ void menu() {
 
         do {
                 printf("---------- FLIXNET ----------\n");
-                printf("-----Clientes------------------\n")
+                printf("-----Clientes------------------\n");
                 printf("1- Dar de alta un cliente\n");
                 printf("2- Dar de baja un cliente\n");
                 printf("3- Modificar un cliente\n");
@@ -107,7 +107,7 @@ void alta_clientes() {
 
         Cliente client;
         Pelicula peli;
-        fp = fp("Clientes.cow", "ab");
+        fp = fopen("Clientes.cow", "ab");
 
         // Datos del cliente
         printf("Ingrese el ID del cliente: ");
@@ -185,7 +185,7 @@ void alta_clientes() {
         printf("\nIngrese el día de renta: ");
         scanf("%u", &peli.dia);
         if(peli.dia == NULL || peli.dia == 0) {
-                printf("\nEntrada errónea")
+                printf("\nEntrada errónea");
                return 0; 
         }
 
@@ -202,7 +202,7 @@ void alta_clientes() {
         printf("\nIngrese el año de renta: ");
         scanf("%u", &peli.anio);
         if(peli.anio == 0 || peli.anio <= 0) {
-                printf("\nEntrada Errónea")
+                printf("\nEntrada Errónea");
                 return 0;
         }
 
