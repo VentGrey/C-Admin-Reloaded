@@ -28,7 +28,6 @@ int opcion;
 void alta_clientes(), baja_clientes(), modif_clientes(); //Funciones de cliente
 void menu();
 
-
 //---Función main
 int main() {
         menu();
@@ -45,7 +44,7 @@ void menu() {
                 printf("1- Dar de alta un cliente");
                 printf("2- Dar de baja un cliente");
                 printf("3- Modificar un cliente");
-                printf("4- Salir")
+                printf("4- Salir");
                 scanf("%d",&op);
 
                 switch(opcion) {
@@ -69,7 +68,7 @@ void alta_clientes() {
 
         Cliente client;
         Pelicula peli;
-        fp = fp("Clientes.res");
+        fp = fp("Clientes.cow", "ab");
 
         // Datos del cliente
         printf("Ingrese el ID del cliente: ");
@@ -191,3 +190,12 @@ void alta_clientes() {
         menu();
 }
 
+
+/*
+        int ID;
+        char correo[50];
+        char nombre[15];
+        char apaterno[15];
+        char amaterno[15];
+        unsigned int edad;
+*/
