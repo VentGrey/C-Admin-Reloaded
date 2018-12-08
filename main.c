@@ -17,14 +17,14 @@
 typedef struct {
         int ID;
         char correo[50];
-        char nombre[15];
-        char apaterno[15];
-        char amaterno[15];
+        char nom[15];
+        char apater[15];
+        char amater[15];
         unsigned int edad;
 }Cliente;
 
 typedef struct {
-        char nombre[20];
+        char nom[20];
         unsigned int dia;
         unsigned int mes;
         unsigned int anio;
@@ -124,34 +124,34 @@ void alta_clientes() {
         }
 
         // Ingreso de Username
-        printf("\nIngrese el nombre de usuario: ");
-        scanf("%s",&client.nombre);
-        if(strlen(client.nombre) == 0) {
+        printf("\nIngrese el nom de usuario: ");
+        scanf("%s",&client.nom);
+        if(strlen(client.nom) == 0) {
                 printf("No se permiten campos nulos");
                 return 0;
-        } else if(strlen(client.nombre) > 15) {
+        } else if(strlen(client.nom) > 15) {
                 printf("Se excedió el número de caracteres aceptados");
                 return 0;
         }
 
         // Ingreso de Apellido Paterno
         printf("\nIngrese el apellido paterno del usuario: ");
-        scanf("%s",&client.apaterno);
-        if(strlen(client.apaterno) == 0) {
+        scanf("%s",&client.apater);
+        if(strlen(client.apater) == 0) {
                 printf("No se permiten campos nulos");
                 return 0;
-        }else if(strlen(client.apaterno) > 15) {
+        }else if(strlen(client.apater) > 15) {
                 printf("Se excedió el número de caracteres aceptados");
                 return 0;
         }
 
         // Ingreso de apellido materno
         printf("\nIngrese el apellido materno del usuario");
-        scanf("%s",&client.amaterno);
-        if(strlen(client.amaterno) == 0) {
+        scanf("%s",&client.amater);
+        if(strlen(client.amater) == 0) {
                 printf("No se permiten campos nulos");
                 return 0;
-        }else if(strlen(client.amaterno) > 15) {
+        }else if(strlen(client.amater) > 15) {
                 printf("Se excedió el número de caracteres aceptados");
                 return 0;
         }
@@ -171,6 +171,19 @@ void alta_clientes() {
         menu();
 }
 
+void list_clientes() {
+        FILE *fp;
+
+        Cliente client;
+
+        fp = fopen("Clientes.cow","rb");
+        fread(&client,sizeof(Cliente),1,fp);
+        while(!feof(fp)) {
+                printf("| %i | %s | %s | %s | %s | %u |\n"
+                ,client.ID, client.nom, client.apater, client.edad);
+        }
+}
+
 void alta_pelis() {
         FILE *fp;
         Pelicula peli;
@@ -178,13 +191,13 @@ void alta_pelis() {
 
         fp = fopen("Pelis.ntlx", "ab");
 
-        // Ingreso de nombre de la película
-       printf("\nIngrese el nombre de la película: ");
-       scanf("%s", &peli.nombre);
-       if(strlen(peli.nombre) == 0) {
+        // Ingreso de nom de la película
+       printf("\nIngrese el nom de la película: ");
+       scanf("%s", &peli.nom);
+       if(strlen(peli.nom) == 0) {
                printf("\nNo se permiten campos nulos");
                 return 0;
-       } else if(strlen(peli.nombre) > 20) {
+       } else if(strlen(peli.nom) > 20) {
                printf("\nSe excedieron los carácteres aceptados");
                return 0;
        }
@@ -236,3 +249,4 @@ void alta_pelis() {
         printf("\n\n\n\n\n\n\n\n\n");
         menu();
 }
+
