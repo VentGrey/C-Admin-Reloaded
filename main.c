@@ -164,60 +164,8 @@ void alta_clientes() {
                 return 0;
         }
 
-       // Ingreso de nombre de la película
-       printf("\nIngrese el nombre de la película: ");
-       scanf("%s", &peli.nombre);
-       if(strlen(peli.nombre) == 0) {
-               printf("\nNo se permiten campos nulos");
-                return 0;
-       } else if(strlen(peli.nombre) > 20) {
-               printf("\nSe excedieron los carácteres aceptados");
-               return 0;
-       }
-
-        // Ingreso del día de la película
-        printf("\nIngrese el día de renta: ");
-        scanf("%u", &peli.dia);
-        if(peli.dia == NULL || peli.dia == 0) {
-                printf("\nEntrada errónea");
-               return 0; 
-        }
-
-        // Ingreso del mes
-
-        printf("\nIngrese el mes de renta: ");
-        scanf("%u", &peli.mes);
-        if(peli.dia == NULL || peli.mes <= 0 || peli.mes > 12) {
-                printf("\nEntrada Errónea");
-                return 0;
-        }
-
-        // Ingreso del año
-        printf("\nIngrese el año de renta: ");
-        scanf("%u", &peli.anio);
-        if(peli.anio == 0 || peli.anio <= 0) {
-                printf("\nEntrada Errónea");
-                return 0;
-        }
-
-        // Ingreso de clasificación
-        printf("\nIngrese la clasificación de la película (A, AA, AB, etc");
-        scanf("%u", &peli.clasificacion);
-        if(strlen(peli.clasificacion) <= 0 || strlen(peli.clasificacion) > 2) {
-                printf("\nEntrada errónea");
-                return 0;
-        }
-
-        // Ingreso de calificacion
-        printf("\nIngrese la calificación de la película <1-5>");
-        scanf("%u", &peli.calif);
-        if(peli.calif < 1 || peli.calif > 5 || peli.calif == NULL) {
-                printf("Entrada errónea");
-                return 0;
-        }
         fseek(fp, 0L, SEEK_END);
         fwrite(&client,sizeof(Cliente),1,fp);
-        fwrite(&peli,sizeof(Pelicula),1,fp);
         fclose(fp);
         printf("\n\n\n\n\n\n\n\n\n");
         menu();
@@ -281,4 +229,10 @@ void alta_pelis() {
                 printf("Entrada errónea");
                 return 0;
         }
+        
+        fseek(fp, 0L, SEEK_END);
+        fwrite(&peli,sizeof(Pelicula),1,fp);
+        fclose(fp);
+        printf("\n\n\n\n\n\n\n\n\n");
+        menu();
 }
