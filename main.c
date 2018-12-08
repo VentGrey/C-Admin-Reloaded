@@ -181,7 +181,10 @@ void list_clientes() {
         while(!feof(fp)) {
                 printf("| %i | %s | %s | %s | %s | %u |\n"
                 ,client.ID, client.nom, client.apater, client.edad);
+                fread(&client,sizeof(Cliente),1,fp);
         }
+        fclose(fp);
+        
 }
 
 void alta_pelis() {
