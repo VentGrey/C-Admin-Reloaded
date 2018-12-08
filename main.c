@@ -99,6 +99,8 @@ void menu() {
 
 }
 
+//---Funciones pertenencientes a clientes
+
 void alta_clientes() {
         FILE *fp;
 
@@ -188,6 +190,16 @@ void list_clientes() {
         fclose(fp);
 }
 
+void modif_clientes() {
+        FILE *fp, *fpa;
+        Cliente client;
+        int aux;
+
+}
+
+
+
+//---Funciones pertenecientes a películas
 void alta_pelis() {
         FILE *fp;
         Pelicula peli;
