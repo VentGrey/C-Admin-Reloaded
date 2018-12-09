@@ -155,7 +155,7 @@ void alta_clientes() {
                 printf("No se permiten campos nulos");
                 return 0;
         }else if(strlen(client.amater) > 15) {
-                printf("Se excedió el número de caracteres aceptados");
+                printf("\nSe excedió el número de caracteres aceptados");
                 return 0;
         }
 
@@ -163,7 +163,7 @@ void alta_clientes() {
         printf("\nIngrese la edad del usuario: ");
         scanf("%s",&client.edad);
         if(client.edad== 0) {
-                printf("No se permiten campos nulos");
+                printf("\nNo se permiten campos nulos");
                 return 0;
         }
 
@@ -193,6 +193,19 @@ void modif_clientes() {
         FILE *fp, *fpa;
         Cliente client;
         int aux;
+
+        fp = fopen("Clientes.cow","rb");
+        fpa = fopen("Clientestemp.meow", "rb");
+
+        printf("\nIngrese el ID del cliente: ");
+        scanf("%i", &aux);
+
+        while(!feof(fp)) {
+                if(client.ID != aux) {
+                        fseek(fpa, 0l,SEEK_END);
+                        fwrite(&client,sizeof(Cliente),1,fpa);
+                }
+        }
 
 }
 
