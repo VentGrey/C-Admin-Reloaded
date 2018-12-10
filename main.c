@@ -112,7 +112,8 @@ void alta_clientes() {
         fp = fopen("Clientes.cow", "ab");
 
         // Datos del cliente
-        printf(ANSI_COLOR_GREEN "\nIngrese el ID del cliente: " ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_GREEN "\nIngrese el ID del\
+         cliente: " ANSI_COLOR_RESET);
         scanf("%i",&client.ID);
 
         if(client.ID == '\0') {
@@ -121,13 +122,15 @@ void alta_clientes() {
         }
 
         // Ingreso de correo
-        printf(ANSI_COLOR_GREEN "\nIngrese el correo del cliente: " ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_GREEN "\nIngrese el correo del\
+         cliente: " ANSI_COLOR_RESET);
         scanf("%s",&client.correo);
         if(strlen(client.correo) == 0) {
                 printf(ANSI_COLOR_RED "Error de entrada" ANSI_COLOR_RESET);
                 return;
         } else if(strlen(client.correo) > 50) {
-                printf(ANSI_COLOR_RED "Se excedió el número de caracteres aceptados" ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_RED "Se excedió el número de\
+                 caracteres aceptados" ANSI_COLOR_RESET);
                 return;
         }
 
@@ -138,7 +141,8 @@ void alta_clientes() {
                 printf(ANSI_COLOR_RED "Error de entrada" ANSI_COLOR_RESET);
                 return;
         } else if(strlen(client.nom) > 15) {
-                printf(ANSI_COLOR_RED "Se excedió el número de caracteres aceptados" ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_RED "Se excedió el número de\
+                 caracteres aceptados" ANSI_COLOR_RESET);
                 return;
         }
 
@@ -149,7 +153,8 @@ void alta_clientes() {
                 printf(ANSI_COLOR_RED "\nError de entrada" ANSI_COLOR_RESET);
                 return;
         }else if(strlen(client.apater) > 15) {
-                printf(ANSI_COLOR_RED "\nSe excedió el número de caracteres aceptados" ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_RED "\nSe excedió el número de\
+                 caracteres aceptados" ANSI_COLOR_RESET);
                 return;
         }
 
@@ -157,10 +162,12 @@ void alta_clientes() {
         printf("\nIngrese el apellido materno del usuario");
         scanf("%s",&client.amater);
         if(strlen(client.amater) == 0) {
-                printf(ANSI_COLOR_RED "\nNo se permiten campos nulos" ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_RED "\nNo se permiten\
+                 campos nulos" ANSI_COLOR_RESET);
                 return;
         }else if(strlen(client.amater) > 15) {
-                printf(ANSI_COLOR_RED "\nSe excedió el número de caracteres aceptados" ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_RED "\nSe excedió el número de\
+                 caracteres aceptados" ANSI_COLOR_RESET);
                 return;
         }
 
