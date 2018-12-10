@@ -233,6 +233,9 @@ void modif_clientes() {
 
 }
 
+void baja_clientes() {
+
+}
 
 
 //---Funciones pertenecientes a películas
