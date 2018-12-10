@@ -38,8 +38,6 @@ typedef struct {
         unsigned int cal;
 }Pelicula;
 
-int opcion;
-
 //---Prototipos de funciones
 //--Clientes
 void alta_clientes(), baja_clientes(), modif_clientes(), list_clientes();
@@ -74,7 +72,7 @@ void menu() {
                 printf(ANSI_COLOR_RED "9- Salir\n" ANSI_COLOR_RESET);
                 scanf("%d",&op);
 
-                switch(opcion) {
+                switch(op) {
                         case 1: alta_clientes();
                         break;
 
