@@ -286,7 +286,7 @@ void alta_pelis() {
        scanf("%s", &peli.nom);
        if(strlen(peli.nom) == 0) {
                printf("\nNo se permiten campos nulos");
-                return 0;
+                return;
        } else if(strlen(peli.nom) > 20) {
                printf("\nSe excedieron los carácteres aceptados");
                return;
@@ -295,7 +295,7 @@ void alta_pelis() {
         // Ingreso del día de la película
         printf("\nIngrese el día de renta: ");
         scanf("%u", &peli.dia);
-        if(peli.dia == NULL || peli.dia == 0) {
+        if(peli.dia == '\0' || peli.dia == 0) {
                 printf("\nEntrada errónea");
                return; 
         }
@@ -328,7 +328,7 @@ void alta_pelis() {
         // Ingreso de calificacion
         printf("\nIngrese la calificación de la película <1-5>");
         scanf("%u", &peli.cal);
-        if(peli.cal < 1 || peli.cal > 5 || peli.cal == NULL) {
+        if(peli.cal < 1 || peli.cal > 5 || peli.cal == '\0') {
                 printf("Entrada errónea");
                 return;
         }
