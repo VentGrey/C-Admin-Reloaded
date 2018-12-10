@@ -115,7 +115,7 @@ void alta_clientes() {
         printf(ANSI_COLOR_GREEN "\nIngrese el ID del cliente: " ANSI_COLOR_RESET);
         scanf("%i",&client.ID);
 
-        if(client.ID == NULL) {
+        if(client.ID == '\0') {
                 printf(ANSI_COLOR_RED "Error de entrada" ANSI_COLOR_RESET);
                 return;
         }
