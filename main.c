@@ -187,7 +187,8 @@ void list_clientes() {
         fread(&client,sizeof(Cliente),1,fp);
         while(!feof(fp)) {
                 printf("| %i | %s | %s | %s | %s | %u |\n"
-                ,client.ID, client.nom, client.apater, client.edad);
+                ,client.ID, client.nom, client.apater, client.amater, 
+                client.edad);
                 fread(&client,sizeof(Cliente),1,fp);
         }
         fclose(fp);
