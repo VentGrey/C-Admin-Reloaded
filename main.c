@@ -175,7 +175,6 @@ void alta_clientes() {
         fseek(fp, 0L, SEEK_END);
         fwrite(&client,sizeof(Cliente),1,fp);
         fclose(fp);
-        printf("\n\n\n\n\n\n\n\n\n");
         menu();
 }
 
