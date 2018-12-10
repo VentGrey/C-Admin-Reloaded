@@ -304,7 +304,7 @@ void alta_pelis() {
 
         printf("\nIngrese el mes de renta: ");
         scanf("%u", &peli.mes);
-        if(peli.dia == NULL || peli.mes <= 0 || peli.mes > 12) {
+        if(peli.dia == '\0' || peli.mes <= 0 || peli.mes > 12) {
                 printf("\nEntrada Errónea");
                 return;
         }
