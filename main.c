@@ -112,7 +112,7 @@ void alta_clientes() {
         fp = fopen("Clientes.cow", "ab");
 
         // Datos del cliente
-        printf(ANSI_COLOR_GREEN "\nIngrese el ID del\
+        printf(ANSI_COLOR_YELLOW "\nIngrese el ID del\
          cliente: " ANSI_COLOR_RESET);
         scanf("%i",&client.ID);
 
@@ -122,7 +122,7 @@ void alta_clientes() {
         }
 
         // Ingreso de correo
-        printf(ANSI_COLOR_GREEN "\nIngrese el correo del\
+        printf(ANSI_COLOR_YELLOW "\nIngrese el correo del\
          cliente: " ANSI_COLOR_RESET);
         scanf("%s",&client.correo);
         if(strlen(client.correo) == 0) {
@@ -174,7 +174,7 @@ void alta_clientes() {
         // Ingreso de la edad del usuario
         printf("\nIngrese la edad del usuario: ");
         scanf("%s",&client.edad);
-        if(client.edad== 0) {
+        if(client.edad == 0) {
                 printf(ANSI_COLOR_RED "\nError de entrada" ANSI_COLOR_RESET);
                 return; 
         }
@@ -278,7 +278,7 @@ void alta_pelis() {
         scanf("%i", &peli.IDP);
         if(!(strlen(peli.IDP) != 0)) {
                 printf("Error de entrada :(");
-                return 0;
+                return;
         }
 
         // Ingreso de nom de la película
@@ -289,7 +289,7 @@ void alta_pelis() {
                 return 0;
        } else if(strlen(peli.nom) > 20) {
                printf("\nSe excedieron los carácteres aceptados");
-               return 0;
+               return;
        }
 
         // Ingreso del día de la película
@@ -297,7 +297,7 @@ void alta_pelis() {
         scanf("%u", &peli.dia);
         if(peli.dia == NULL || peli.dia == 0) {
                 printf("\nEntrada errónea");
-               return 0; 
+               return; 
         }
 
         // Ingreso del mes
@@ -306,7 +306,7 @@ void alta_pelis() {
         scanf("%u", &peli.mes);
         if(peli.dia == NULL || peli.mes <= 0 || peli.mes > 12) {
                 printf("\nEntrada Errónea");
-                return 0;
+                return;
         }
 
         // Ingreso del año
@@ -314,7 +314,7 @@ void alta_pelis() {
         scanf("%u", &peli.anio);
         if(peli.anio == 0 || peli.anio <= 0) {
                 printf("\nEntrada Errónea");
-                return 0;
+                return;
         }
 
         // Ingreso de clasificación
@@ -322,7 +322,7 @@ void alta_pelis() {
         scanf("%u", &peli.clas);
         if(strlen(peli.clas) <= 0 || strlen(peli.clas) > 2) {
                 printf("\nEntrada errónea");
-                return 0;
+                return;
         }
 
         // Ingreso de calificacion
@@ -330,7 +330,7 @@ void alta_pelis() {
         scanf("%u", &peli.cal);
         if(peli.cal < 1 || peli.cal > 5 || peli.cal == NULL) {
                 printf("Entrada errónea");
-                return 0;
+                return;
         }
         
         fseek(fp, 0L, SEEK_END);
