@@ -58,13 +58,13 @@ void menu() {
         int op;
 
         do {
-                printf(ANSI_COLOR_RED "---------- FLIXNET ----------\n" ANSI_COLOR_RESET);
-                printf(ANSI_COLOR_BLUE "-----Clientes------------------\n" ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_RED "------ FLIXNET ----\n" ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_BLUE "-----Clientes-----\n" ANSI_COLOR_RESET);
                 printf("1- Dar de alta un cliente\n");
                 printf("2- Dar de baja un cliente\n");
                 printf("3- Modificar un cliente\n");
                 printf("4- Listar los clientes\n");
-                printf(ANSI_COLOR_GREEN "-----Películas-------------------\n" ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_GREEN "---Películas-----\n" ANSI_COLOR_RESET);
                 printf("5- Dar de alta una película\n");
                 printf("6- Dar de baja una película\n");
                 printf("7- Modificar una película\n");
