@@ -1,3 +1,3 @@
 # Simple makefile para compilar el programa administrativo.
 Peli-admin:
-	gcc -o -O3 -pipe main.c
+	gcc -o Clientes -O3 -pipe main.c
