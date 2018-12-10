@@ -276,7 +276,7 @@ void alta_pelis() {
         //Ingreso del ID de la película
         printf("\nIngrese el ID de la película: ");
         scanf("%i", &peli.IDP);
-        if(peli.IDP == "\0") {
+        if(peli.IDP == '\0') {
                 printf("Error de entrada :(");
                 return;
         }
