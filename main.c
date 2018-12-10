@@ -237,6 +237,10 @@ void alta_pelis() {
 
         fp = fopen("Pelis.ntlx", "ab");
 
+        //Ingreso del ID de la película
+        printf("\nIngrese el ID de la película: ");
+        scanf("%i", &peli.IDP);
+
         // Ingreso de nom de la película
        printf("\nIngrese el nom de la película: ");
        scanf("%s", &peli.nom);
@@ -304,8 +308,9 @@ void list_pelis() {
         fp = fopen("Pelis.ntlx", "rb");
         fread(&peli,sizeof(Pelicula),1,fp);
         while(!feof(fp)) {
-                printf("| %s | %u | %u | %u | %s | %u |"
-                , peli.nom, peli.dia, peli.mes, peli.anio, peli.clas, peli.cal);
+                printf("| %d | %s | %u | %u | %u | %s | %u |"
+                ,peli.IDP, peli.nom, peli.dia, peli.mes, peli.anio, peli.clas, 
+                peli.cal);
                 fread(&peli,sizeof(Pelicula),1,fp);
         }
         fclose(fp);
