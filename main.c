@@ -117,7 +117,7 @@ void alta_clientes() {
 
         if(client.ID == NULL) {
                 printf(ANSI_COLOR_RED "Error de entrada" ANSI_COLOR_RESET);
-                return 0;
+                return;
         }
 
         // Ingreso de correo
@@ -125,10 +125,10 @@ void alta_clientes() {
         scanf("%s",&client.correo);
         if(strlen(client.correo) == 0) {
                 printf(ANSI_COLOR_RED "Error de entrada" ANSI_COLOR_RESET);
-                return 0;
+                return;
         } else if(strlen(client.correo) > 50) {
                 printf(ANSI_COLOR_RED "Se excedió el número de caracteres aceptados" ANSI_COLOR_RESET);
-                return 0;
+                return;
         }
 
         // Ingreso de Username
@@ -136,10 +136,10 @@ void alta_clientes() {
         scanf("%s",&client.nom);
         if(strlen(client.nom) == 0) {
                 printf(ANSI_COLOR_RED "Error de entrada" ANSI_COLOR_RESET);
-                return 0;
+                return;
         } else if(strlen(client.nom) > 15) {
                 printf(ANSI_COLOR_RED "Se excedió el número de caracteres aceptados" ANSI_COLOR_RESET);
-                return 0;
+                return;
         }
 
         // Ingreso de Apellido Paterno
@@ -147,10 +147,10 @@ void alta_clientes() {
         scanf("%s",&client.apater);
         if(strlen(client.apater) == 0) {
                 printf(ANSI_COLOR_RED "\nError de entrada" ANSI_COLOR_RESET);
-                return 0;
+                return;
         }else if(strlen(client.apater) > 15) {
                 printf(ANSI_COLOR_RED "\nSe excedió el número de caracteres aceptados" ANSI_COLOR_RESET);
-                return 0;
+                return;
         }
 
         // Ingreso de apellido materno
@@ -158,10 +158,10 @@ void alta_clientes() {
         scanf("%s",&client.amater);
         if(strlen(client.amater) == 0) {
                 printf(ANSI_COLOR_RED "\nNo se permiten campos nulos" ANSI_COLOR_RESET);
-                return 0;
+                return;
         }else if(strlen(client.amater) > 15) {
                 printf(ANSI_COLOR_RED "\nSe excedió el número de caracteres aceptados" ANSI_COLOR_RESET);
-                return 0;
+                return;
         }
 
         // Ingreso de la edad del usuario
@@ -169,7 +169,7 @@ void alta_clientes() {
         scanf("%s",&client.edad);
         if(client.edad== 0) {
                 printf(ANSI_COLOR_RED "\nError de entrada" ANSI_COLOR_RESET);
-                return 0;
+                return; 
         }
 
         fseek(fp, 0L, SEEK_END);
