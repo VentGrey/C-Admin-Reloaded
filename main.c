@@ -13,6 +13,9 @@
 #include <stdlib.h>
 
 //---Estructuras
+
+/* Estructura de tipo cliente, posee un ID el cual nos ayudará con el listado,
+modificación u ordenamiento mas adelante. */
 typedef struct {
         int ID;
         char correo[50];
@@ -22,6 +25,9 @@ typedef struct {
         unsigned int edad;
 }Cliente;
 
+
+/* Estructura de tipo película, al igual que la estructura cliente esta posee
+un Identificador que ayudará con su listado u ordenamiento */
 typedef struct {
         int IDP;
         char nom[20];
@@ -240,6 +246,10 @@ void alta_pelis() {
         //Ingreso del ID de la película
         printf("\nIngrese el ID de la película: ");
         scanf("%i", &peli.IDP);
+        if(!(strlen(peli.IDP) != 0)) {
+                printf("Error de entrada :(");
+                return 0;
+        }
 
         // Ingreso de nom de la película
        printf("\nIngrese el nom de la película: ");
