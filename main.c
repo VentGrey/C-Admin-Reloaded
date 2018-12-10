@@ -325,3 +325,7 @@ void list_pelis() {
         }
         fclose(fp);
 }
+
+void modificar_pelis() {
+
+}
