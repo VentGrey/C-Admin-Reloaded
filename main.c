@@ -186,7 +186,8 @@ void list_clientes() {
         fp = fopen("Clientes.cow","rb");
         fread(&client,sizeof(Cliente),1,fp);
         while(!feof(fp)) {
-                printf("| %i | %s | %s | %s | %s | %u |\n"
+                printf("|ID: %i |Correo: %s |Nombre: %s \
+                |Apellido Paterno: %s |Apellido Materno: %s |Edad: %u |\n"
                 ,client.ID, client.nom, client.apater, client.amater, 
                 client.edad);
                 fread(&client,sizeof(Cliente),1,fp);
