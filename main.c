@@ -23,6 +23,7 @@ typedef struct {
 }Cliente;
 
 typedef struct {
+        int IDP;
         char nom[20];
         unsigned int dia;
         unsigned int mes;
