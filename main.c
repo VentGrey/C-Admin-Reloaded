@@ -391,3 +391,28 @@ void modificar_pelis() {
         remove("Pelis.ntlx");
         rename("Pelistemp.wow","Pelis.ntlx");
 }
+
+void baja_pelis() {
+        FILE *fp, *fpa;
+        Pelicula peli;
+        int aux;
+
+        fp = fopen("Pelis.ntlx","rb");
+        fpa = fopen("Pelistemp.wow", "ab");
+
+        printf("\nIngrese el ID de la película a dar de baja: ");
+        scanf("%i", &aux);
+
+        fread(&peli,sizeof(Pelicula),1,fp);
+        while(!feof(fp)) {
+                if(peli.IDP != aux) {
+                        fseek(fpa,0l,SEEK_END);
+                        fwrite(&peli,sizeof(Pelicula),1,fpa);
+                }
+                fread(&peli,sizeof(Pelicula),1,fp);
+        }
+        fclose(fp);
+        fclose(fpa);
+        remove("Pelis.ntlx");
+        rename("Pelistemp.wow","Pelis.ntlx");
+}
