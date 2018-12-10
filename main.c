@@ -204,8 +204,25 @@ void modif_clientes() {
                 if(client.ID != aux) {
                         fseek(fpa, 0l,SEEK_END);
                         fwrite(&client,sizeof(Cliente),1,fpa);
+                } else {
+                        printf("\nIngrese el nombre: ");
+                        scanf("%s", client.nom);
+
+                        printf("\nIngrese el apellido paterno: ");
+                        scanf("%s", client.apater);
+
+                        printf("\nIngrese el apellido materno: ");
+                        scanf("%s", client.amater);
+
+                        printf("\nIngrese la edad del cliente: ");
+                        scanf("%u", client.edad);
                 }
+                fread(&client,sizeof(Cliente),1,fp);
         }
+        fclose(fp);
+        fclose(fpa);
+        remove("Clientes.cow");
+        rename("Clientestemp.meow","Clientes.cow");
 
 }
 
