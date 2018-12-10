@@ -60,7 +60,7 @@ void menu() {
         int op;
 
         do {
-                printf("---------- FLIXNET ----------\n");
+                printf(ANSI_COLOR_RED "---------- FLIXNET ----------\n" ANSI_COLOR_RESET);
                 printf("-----Clientes------------------\n");
                 printf("1- Dar de alta un cliente\n");
                 printf("2- Dar de baja un cliente\n");
