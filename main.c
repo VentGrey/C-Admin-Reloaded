@@ -202,7 +202,7 @@ void modif_clientes() {
         int aux;
 
         fp = fopen("Clientes.cow","rb");
-        fpa = fopen("Clientestemp.meow", "rb");
+        fpa = fopen("Clientestemp.meow", "ab");
 
         printf("\nIngrese el ID del cliente: ");
         scanf("%i", &aux);
@@ -234,7 +234,28 @@ void modif_clientes() {
 }
 
 void baja_clientes() {
+        FILE *fp, *fpa;
+        Cliente client;
+        int aux;
 
+        fp = fopen("Clientes.cow","rb");
+        fpa = fopen("Clientestemp.meow", "ab");
+
+        printf("\nIngrese el ID del cliente a dar de baja: ");
+        scanf("%i", &aux);
+
+        fread(&client,sizeof(Cliente),1,fp);
+        while(!feof(fp)) {
+                if(client.ID != aux) {
+                        fseek(fpa,0l,SEEK_END);
+                        fwrite(&client,sizeof(Cliente),1,fpa);
+                }
+                fread(&client,sizeof(Cliente),1,fp);
+        }
+        fclose(fp);
+        fclose(fpa);
+        remove("Clientes.cow");
+        rename("Clientestemp.meow","Clientes.cow");
 }
 
 
