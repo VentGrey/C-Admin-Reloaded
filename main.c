@@ -252,7 +252,7 @@ void alta_pelis() {
         }
 
         // Ingreso de nom de la película
-       printf("\nIngrese el nom de la película: ");
+       printf("\nIngrese el nombre de la película: ");
        scanf("%s", &peli.nom);
        if(strlen(peli.nom) == 0) {
                printf("\nNo se permiten campos nulos");
@@ -327,5 +327,43 @@ void list_pelis() {
 }
 
 void modificar_pelis() {
+        FILE *fp, *fpa;
+        Pelicula peli;
+        int aux;
 
+        fp = fopen("Pelis.ntlx","rb");
+        fpa = fopen("Pelistemp.wow","rb");
+
+        printf("\nIngrese el ID de la película: ");
+        scanf("%i", &aux);
+
+        while(!feof(fp)) {
+                if(peli.IDP != aux) {
+                        fseek(fpa, 0l, SEEK_END);
+                        fwrite(&peli,sizeof(Pelicula),1,fpa);
+                } else {
+                        printf("\nIngrese el nombre de la película: ");
+                        scanf("%s", &peli.nom);
+
+                        printf("Ingrese el día de renta: ");
+                        scanf("%u", &peli.dia);
+
+                        printf("Ingrese el mes de renta: ");
+                        scanf("%u", &peli.mes);
+
+                        printf("Ingrese el año de renta: ");
+                        scanf("%u", &peli.anio);
+
+                        printf("Ingrese la clasificación: ");
+                        scanf("%s", &peli.clas);
+
+                        printf("Ingrese la calificación (1-5): ");
+                        scanf("%u", &peli.cal);
+                }
+                fread(&peli,sizeof(Pelicula),1,fp);
+        }
+        fclose(fp);
+        fclose(fpa);
+        remove("Pelis.ntlx");
+        rename("Pelistemp.wow","Pelis.ntlx");
 }
